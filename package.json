@@ -1,0 +1,13 @@
+{
+    "name": "moritz-hartlieb-academic-site",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "tailwindcss -i ./src/styles.css -o ./assets/styles.css --minify && node ./scripts/build-site.mjs",
+        "dev": "tailwindcss -i ./src/styles.css -o ./assets/styles.css --watch"
+    },
+    "devDependencies": {
+        "@tailwindcss/cli": "^4.3.3",
+        "tailwindcss": "^4.3.3"
+    }
+}

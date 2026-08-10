@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@source "../index.html";
+
+@theme {
+    --color-paper: #ffffff;
+    --color-ink: #242424;
+    --color-muted: #5f6368;
+    --color-rule: #d7d5cf;
+    --color-academic: #17466f;
+    --color-academic-dark: #0d2f4e;
+    --font-sans: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+    html {
+        @apply scroll-smooth bg-paper;
+    }
+
+    body {
+        @apply min-h-screen bg-paper font-sans text-[1.0625rem] leading-[1.72] text-ink antialiased;
+    }
+
+    a {
+        @apply break-words text-academic underline decoration-academic/35 decoration-1 underline-offset-[3px] transition-colors hover:text-academic-dark hover:decoration-academic-dark focus-visible:rounded-[2px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-academic;
+    }
+
+    h1,
+    h2,
+    h3,
+    strong {
+        @apply text-ink;
+    }
+
+    h1 {
+        @apply text-[2.375rem] leading-tight font-normal tracking-[-0.025em] sm:text-[2.75rem];
+    }
+
+    h2 {
+        @apply mb-6 border-b border-rule pb-2 text-[1.375rem] leading-snug font-semibold tracking-[-0.012em];
+    }
+
+    section {
+        @apply mt-12 sm:mt-14;
+    }
+}
+
+@layer components {
+    .page-shell {
+        @apply mx-auto w-full max-w-[48rem] px-5 py-10 sm:px-8 sm:py-16;
+    }
+
+    .site-header {
+        @apply border-b border-rule pb-5;
+    }
+
+    .intro {
+        @apply mt-8 space-y-5 sm:mt-10;
+    }
+
+    .email-line {
+        @apply pt-1;
+    }
+
+    .publication-list {
+        @apply ml-6 list-decimal space-y-5 marker:text-muted marker:tabular-nums;
+    }
+
+    .publication-list li {
+        @apply pl-2 sm:pl-3;
+    }
+
+    .teaching-entry {
+        @apply grid grid-cols-[7.75rem_minmax(0,1fr)] items-baseline gap-x-4 gap-y-1 pb-6 sm:grid-cols-[9.5rem_minmax(0,1fr)] sm:gap-x-6;
+    }
+
+    .teaching-term,
+    .teaching-year {
+        @apply text-sm leading-6;
+    }
+
+    .teaching-entry h3 {
+        @apply text-[1.0625rem] leading-6 font-semibold;
+    }
+
+    .course-code {
+        @apply whitespace-nowrap font-normal text-muted;
+    }
+
+    .teaching-link {
+        @apply text-[0.9375rem] leading-6;
+    }
+
+    address {
+        @apply not-italic;
+    }
+
+    .skip-link {
+        @apply fixed top-3 left-3 z-10 -translate-y-20 bg-ink px-3 py-2 text-sm text-white no-underline transition-transform focus:translate-y-0 focus:text-white focus:outline-white;
+    }
+}
